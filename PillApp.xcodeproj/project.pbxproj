@@ -7,25 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BB1D832F94668AD7CB6F796 /* Pods_PillApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E3FCC8911FB31D867A180F /* Pods_PillApp.framework */; };
+		E493233727DE4FBE003CAB9D /* SetPilsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493233627DE4FBE003CAB9D /* SetPilsTableViewController.swift */; };
+		E49A26FA27EA0EEA004B7BB9 /* PillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A26F927EA0EEA004B7BB9 /* PillCell.swift */; };
 		E4A89FE327DA5F35005236B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A89FE227DA5F35005236B4 /* AppDelegate.swift */; };
 		E4A89FE527DA5F35005236B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A89FE427DA5F35005236B4 /* SceneDelegate.swift */; };
-		E4A89FE727DA5F35005236B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A89FE627DA5F35005236B4 /* ViewController.swift */; };
 		E4A89FEA27DA5F35005236B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A89FE827DA5F35005236B4 /* Main.storyboard */; };
 		E4A89FED27DA5F35005236B4 /* PillApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4A89FEB27DA5F35005236B4 /* PillApp.xcdatamodeld */; };
 		E4A89FEF27DA5F36005236B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A89FEE27DA5F36005236B4 /* Assets.xcassets */; };
 		E4A89FF227DA5F36005236B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A89FF027DA5F36005236B4 /* LaunchScreen.storyboard */; };
+		E4A89FFA27DA6F13005236B4 /* PillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A89FF927DA6F12005236B4 /* PillsTableViewController.swift */; };
+		E4DB6A9A27E7742600D88F5F /* PillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB6A9927E7742600D88F5F /* PillModel.swift */; };
+		E4DB6A9C27E774A100D88F5F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB6A9B27E774A100D88F5F /* DataManager.swift */; };
+		E4DB6AA127E787DE00D88F5F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB6AA027E787DE00D88F5F /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B1997590D513C85F8743E7D /* Pods-PillApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PillApp.debug.xcconfig"; path = "Target Support Files/Pods-PillApp/Pods-PillApp.debug.xcconfig"; sourceTree = "<group>"; };
+		BB1223D0E7F1CB5A26F18A93 /* Pods-PillApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PillApp.release.xcconfig"; path = "Target Support Files/Pods-PillApp/Pods-PillApp.release.xcconfig"; sourceTree = "<group>"; };
+		C0E3FCC8911FB31D867A180F /* Pods_PillApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PillApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E493233627DE4FBE003CAB9D /* SetPilsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPilsTableViewController.swift; sourceTree = "<group>"; };
+		E49A26F927EA0EEA004B7BB9 /* PillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCell.swift; sourceTree = "<group>"; };
 		E4A89FDF27DA5F35005236B4 /* PillApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A89FE227DA5F35005236B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4A89FE427DA5F35005236B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E4A89FE627DA5F35005236B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E4A89FE927DA5F35005236B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4A89FEC27DA5F35005236B4 /* PillApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PillApp.xcdatamodel; sourceTree = "<group>"; };
 		E4A89FEE27DA5F36005236B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4A89FF127DA5F36005236B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4A89FF327DA5F36005236B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4A89FF927DA6F12005236B4 /* PillsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsTableViewController.swift; sourceTree = "<group>"; };
+		E4DB6A9927E7742600D88F5F /* PillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillModel.swift; sourceTree = "<group>"; };
+		E4DB6A9B27E774A100D88F5F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E4DB6AA027E787DE00D88F5F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB1D832F94668AD7CB6F796 /* Pods_PillApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9219E7FA4B431FD450F74E9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0E3FCC8911FB31D867A180F /* Pods_PillApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC11CFF2AA24F7CC145CE784 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B1997590D513C85F8743E7D /* Pods-PillApp.debug.xcconfig */,
+				BB1223D0E7F1CB5A26F18A93 /* Pods-PillApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E4A89FD627DA5F35005236B4 = {
 			isa = PBXGroup;
 			children = (
 				E4A89FE127DA5F35005236B4 /* PillApp */,
 				E4A89FE027DA5F35005236B4 /* Products */,
+				AC11CFF2AA24F7CC145CE784 /* Pods */,
+				9219E7FA4B431FD450F74E9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,7 +94,9 @@
 			children = (
 				E4A89FE227DA5F35005236B4 /* AppDelegate.swift */,
 				E4A89FE427DA5F35005236B4 /* SceneDelegate.swift */,
-				E4A89FE627DA5F35005236B4 /* ViewController.swift */,
+				E4DB6A9F27E77B1100D88F5F /* Services */,
+				E4DB6A9D27E7765700D88F5F /* Models */,
+				E4DB6A9E27E777C000D88F5F /* ViewControllers */,
 				E4A89FE827DA5F35005236B4 /* Main.storyboard */,
 				E4A89FEE27DA5F36005236B4 /* Assets.xcassets */,
 				E4A89FF027DA5F36005236B4 /* LaunchScreen.storyboard */,
@@ -70,6 +106,33 @@
 			path = PillApp;
 			sourceTree = "<group>";
 		};
+		E4DB6A9D27E7765700D88F5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4DB6A9927E7742600D88F5F /* PillModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E4DB6A9E27E777C000D88F5F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4A89FF927DA6F12005236B4 /* PillsTableViewController.swift */,
+				E493233627DE4FBE003CAB9D /* SetPilsTableViewController.swift */,
+				E49A26F927EA0EEA004B7BB9 /* PillCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E4DB6A9F27E77B1100D88F5F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E4DB6A9B27E774A100D88F5F /* DataManager.swift */,
+				E4DB6AA027E787DE00D88F5F /* StorageManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4A89FF627DA5F36005236B4 /* Build configuration list for PBXNativeTarget "PillApp" */;
 			buildPhases = (
+				26EC6FE0B92A6CB8E4283AA6 /* [CP] Check Pods Manifest.lock */,
 				E4A89FDB27DA5F35005236B4 /* Sources */,
 				E4A89FDC27DA5F35005236B4 /* Frameworks */,
 				E4A89FDD27DA5F35005236B4 /* Resources */,
+				CD94925B9B4A504760D441D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,15 +201,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26EC6FE0B92A6CB8E4283AA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PillApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD94925B9B4A504760D441D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PillApp/Pods-PillApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PillApp/Pods-PillApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PillApp/Pods-PillApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E4A89FDB27DA5F35005236B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4A89FE727DA5F35005236B4 /* ViewController.swift in Sources */,
+				E4A89FFA27DA6F13005236B4 /* PillsTableViewController.swift in Sources */,
+				E493233727DE4FBE003CAB9D /* SetPilsTableViewController.swift in Sources */,
+				E4DB6A9A27E7742600D88F5F /* PillModel.swift in Sources */,
+				E4DB6A9C27E774A100D88F5F /* DataManager.swift in Sources */,
+				E49A26FA27EA0EEA004B7BB9 /* PillCell.swift in Sources */,
 				E4A89FE327DA5F35005236B4 /* AppDelegate.swift in Sources */,
 				E4A89FED27DA5F35005236B4 /* PillApp.xcdatamodeld in Sources */,
 				E4A89FE527DA5F35005236B4 /* SceneDelegate.swift in Sources */,
+				E4DB6AA127E787DE00D88F5F /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +400,7 @@
 		};
 		E4A89FF727DA5F36005236B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B1997590D513C85F8743E7D /* Pods-PillApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -316,6 +429,7 @@
 		};
 		E4A89FF827DA5F36005236B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB1223D0E7F1CB5A26F18A93 /* Pods-PillApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
