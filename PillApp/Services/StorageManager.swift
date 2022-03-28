@@ -29,7 +29,6 @@ func save(_ pillList: [PillList]) {
     func delete(_ pillList: PillList) {
         write {
             realm.delete(pillList)
-            realm.delete(pillList)
         }
     }
     func edit (_ pillList: PillList, newValue: String) {
@@ -39,8 +38,7 @@ func save(_ pillList: [PillList]) {
         }
     }
    
-    
-    
+ 
     private func write(completion: () -> Void) {
         do {
             try realm.write {

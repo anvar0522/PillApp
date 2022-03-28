@@ -16,14 +16,11 @@ struct DataManager {
     func createTempData(completion: @escaping () -> Void) {
         if !UserDefaults.standard.bool(forKey: "anvar1234") {
          
-//            let pillList = PillList()
             
             let kardiomagnil = PillList(value: ["Кардиомагнил 75","1 таблетка", Date(), false])
             let azimac = PillList(value: ["Азимак","1 таблетка", Date(), false])
             let yarina = PillList(value: ["Ярина","1 таблетка", Date(), false])
-//            List(collection: [kardiomagnil, azimac, yarina])
-//            pillList.pills.insert(contentsOf: [kardiomagnil, azimac, yarina], at: 0)
-            
+
             
             
             DispatchQueue.main.async {

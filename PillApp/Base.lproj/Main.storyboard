@@ -128,7 +128,7 @@
         <!--Add Pill-->
         <scene sceneID="ogb-Xm-Ve6">
             <objects>
-                <viewController id="vut-wO-tWh" customClass="SetPilsTableViewController" customModule="PillApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vut-wO-tWh" customClass="SetPillsTableViewController" customModule="PillApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ier-Xu-5fs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,6 +180,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePickerLb" destination="DeX-LN-RGn" id="C68-Wf-NTK"/>
+                        <outlet property="pillNameTF" destination="u0l-wk-0Js" id="85Q-dY-NjP"/>
+                        <outlet property="pillNoteTF" destination="yjf-up-Bdm" id="yA0-sz-uqk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubo-tC-EeZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

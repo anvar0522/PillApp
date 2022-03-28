@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4BB1D832F94668AD7CB6F796 /* Pods_PillApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E3FCC8911FB31D867A180F /* Pods_PillApp.framework */; };
-		E493233727DE4FBE003CAB9D /* SetPilsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493233627DE4FBE003CAB9D /* SetPilsTableViewController.swift */; };
+		E493233727DE4FBE003CAB9D /* SetPillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493233627DE4FBE003CAB9D /* SetPillsTableViewController.swift */; };
 		E49A26FA27EA0EEA004B7BB9 /* PillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A26F927EA0EEA004B7BB9 /* PillCell.swift */; };
 		E4A89FE327DA5F35005236B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A89FE227DA5F35005236B4 /* AppDelegate.swift */; };
 		E4A89FE527DA5F35005236B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A89FE427DA5F35005236B4 /* SceneDelegate.swift */; };
@@ -26,7 +26,7 @@
 		7B1997590D513C85F8743E7D /* Pods-PillApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PillApp.debug.xcconfig"; path = "Target Support Files/Pods-PillApp/Pods-PillApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1223D0E7F1CB5A26F18A93 /* Pods-PillApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PillApp.release.xcconfig"; path = "Target Support Files/Pods-PillApp/Pods-PillApp.release.xcconfig"; sourceTree = "<group>"; };
 		C0E3FCC8911FB31D867A180F /* Pods_PillApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PillApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E493233627DE4FBE003CAB9D /* SetPilsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPilsTableViewController.swift; sourceTree = "<group>"; };
+		E493233627DE4FBE003CAB9D /* SetPillsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPillsTableViewController.swift; sourceTree = "<group>"; };
 		E49A26F927EA0EEA004B7BB9 /* PillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCell.swift; sourceTree = "<group>"; };
 		E4A89FDF27DA5F35005236B4 /* PillApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A89FE227DA5F35005236B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A89FF927DA6F12005236B4 /* PillsTableViewController.swift */,
-				E493233627DE4FBE003CAB9D /* SetPilsTableViewController.swift */,
+				E493233627DE4FBE003CAB9D /* SetPillsTableViewController.swift */,
 				E49A26F927EA0EEA004B7BB9 /* PillCell.swift */,
 			);
 			path = ViewControllers;
@@ -249,7 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4A89FFA27DA6F13005236B4 /* PillsTableViewController.swift in Sources */,
-				E493233727DE4FBE003CAB9D /* SetPilsTableViewController.swift in Sources */,
+				E493233727DE4FBE003CAB9D /* SetPillsTableViewController.swift in Sources */,
 				E4DB6A9A27E7742600D88F5F /* PillModel.swift in Sources */,
 				E4DB6A9C27E774A100D88F5F /* DataManager.swift in Sources */,
 				E49A26FA27EA0EEA004B7BB9 /* PillCell.swift in Sources */,
