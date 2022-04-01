@@ -14,18 +14,18 @@ struct DataManager {
     private init() {}
     
     func createTempData(completion: @escaping () -> Void) {
-        if !UserDefaults.standard.bool(forKey: "anvar1234") {
+        if !UserDefaults.standard.bool(forKey: "dadadada") {
          
             
-            let kardiomagnil = PillList(value: ["Кардиомагнил 75","1 таблетка", Date(), false])
-            let azimac = PillList(value: ["Азимак","1 таблетка", Date(), false])
-            let yarina = PillList(value: ["Ярина","1 таблетка", Date(), false])
+            let kardiomagnil = PillList(value: ["Кардиомагнил 75","1 таблетка", ""])
+            let azimac = PillList(value: ["Азимак","1 таблетка", ""])
+            let yarina = PillList(value: ["Ярина","1 таблетка", ""])
 
             
             
             DispatchQueue.main.async {
                 StorageManager.shared.save([kardiomagnil, azimac, yarina])
-                UserDefaults.standard.set(true, forKey: "anvar1234")
+                UserDefaults.standard.set(true, forKey: "dadadada")
                 completion()
             }
             

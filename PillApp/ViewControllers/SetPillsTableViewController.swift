@@ -10,23 +10,25 @@ import RealmSwift
 
 class SetPillsTableViewController: UIViewController {
    
-     var delegate: PillsTableViewControllerDelegate!
-//    var pills: PillList!
+  
+    var pills: PillList!
 
     
-    @IBOutlet weak var datePickerLb: UIDatePicker!
+    @IBOutlet weak var datePickerLb: UILabel!
+    
     @IBOutlet weak var pillNameTF: UITextField!
     @IBOutlet weak var pillNoteTF: UITextField!
     
+    @IBOutlet weak var datePicker: UIDatePicker!
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+            }
 
    
     @IBAction func savePill(_ sender: Any) {
          pillNameTF.text == ""
-         ?   showAlert(title: "Oooops", message: "Пожалуйста введите название лекарства")
-         :  saveTask(withName: pillNameTF.text ?? "", andnote: pillNoteTF.text ?? "")
+         ?  showAlert(title: "Oooops", message: "Пожалуйста введите название лекарства")
+         :  saveTask(withName: pillNameTF.text ?? "", andnote: pillNoteTF.text ?? "" , andtime: datePickerLb.text ?? "")
         
         dismiss(animated: true)
     }
@@ -35,19 +37,20 @@ class SetPillsTableViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @IBAction func datePicker(_ sender: Any) {
+  
+    @IBAction func datePickerChanged(_ sender: Any) {
         
         let dateFormatter = DateFormatter()
         
-        dateFormatter.timeStyle = DateFormatter.Style.short
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        
-        
-        let _ = dateFormatter.string(from: datePickerLb.date)
+        dateFormatter.timeStyle = .short
+        dateFormatter.dateFormat = "HH:mm"
+  
+        let strDate = dateFormatter.string(from: datePicker.date)
+        datePickerLb.text = strDate
 
         }
-    private func saveTask(withName name: String, andnote note: String){
-        let pill = PillList(value: [name, note])
+    private func saveTask(withName name: String, andnote note: String, andtime time: String){
+        let pill = PillList(value: [name, note, time])
         StorageManager.shared.save(pill)
         
     }

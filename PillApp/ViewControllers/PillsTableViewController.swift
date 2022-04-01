@@ -8,23 +8,15 @@
 import UIKit
 import RealmSwift
 
-protocol PillsTableViewControllerDelegate {
-    func setNewValues(for pills: PillList)
-}
-
-class PillsTableViewController: UITableViewController, PillsTableViewControllerDelegate {
-    func setNewValues(for pills: PillList) {
-        
-    }
-    
-  
+class PillsTableViewController: UITableViewController {  
     var pills: Results<PillList>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         pills = StorageManager.shared.realm.objects(PillList.self)
         self.tableView.rowHeight = UITableView.automaticDimension;
-   
+        navigationItem.leftBarButtonItem = editButtonItem
+
         createTempData()
         
     }
@@ -52,27 +44,21 @@ class PillsTableViewController: UITableViewController, PillsTableViewControllerD
             tableView.deselectRow(at: indexPath, animated: true)
         }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let pillList = pills[indexPath.row]
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+            StorageManager.shared.delete(pillList)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    
     private func createTempData(){
         DataManager.shared.createTempData {
             self.tableView.reloadData()
         }
     }
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        guard let navigationVC = segue.destination as? UINavigationController else { return }
-        guard let pillsVC = navigationVC.topViewController as? SetPillsTableViewController else { return }
-        pillsVC.delegate = self
-    }
 }
-
-// Пробовал через простой препейр, одно и тоже
-//override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    guard let indexPath = tableView.indexPathForSelectedRow else { return }
-//    guard let navigationVC = segue.destination as? UINavigationController else { return }
-//    guard let pillsVC = navigationVC.topViewController as? SetPillsTableViewController else { return }
-//
-//    let pillList = pills[indexPath.row]
-//    pillsVC.pills = pillList
-//
-//}

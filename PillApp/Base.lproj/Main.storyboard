@@ -45,7 +45,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="lal-AA-QbA" secondAttribute="bottom" constant="8" id="qn1-X7-XUU"/>
                                                     </constraints>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="sYS-tX-b5J">
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sYS-tX-b5J">
                                                     <rect key="frame" x="0.0" y="16" width="375" height="74"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BUG-c5-vuC">
@@ -55,8 +55,8 @@
                                                                 <constraint firstAttribute="width" constant="75" id="4UO-7s-aZd"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HxD-Ac-eg6">
-                                                            <rect key="frame" x="75" y="0.0" width="300" height="52"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="cCh-sP-upK">
+                                                            <rect key="frame" x="75" y="7" width="300" height="60"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaR-qO-mcK">
                                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="31"/>
@@ -68,10 +68,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFJ-nM-JNV">
-                                                                    <rect key="frame" x="0.0" y="31" width="300" height="21"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="21" id="fUB-Rm-guq"/>
-                                                                    </constraints>
+                                                                    <rect key="frame" x="0.0" y="44" width="300" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -81,12 +78,8 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="BUG-c5-vuC" firstAttribute="leading" secondItem="sYS-tX-b5J" secondAttribute="leading" id="7kk-Ua-RuA"/>
-                                                        <constraint firstItem="HxD-Ac-eg6" firstAttribute="leading" secondItem="BUG-c5-vuC" secondAttribute="trailing" id="BHc-Am-P1V"/>
                                                         <constraint firstAttribute="bottom" secondItem="BUG-c5-vuC" secondAttribute="bottom" id="GcQ-X2-V6V"/>
-                                                        <constraint firstItem="PaR-qO-mcK" firstAttribute="leading" secondItem="BUG-c5-vuC" secondAttribute="trailing" id="UcH-aL-RER"/>
-                                                        <constraint firstItem="HxD-Ac-eg6" firstAttribute="leading" secondItem="BUG-c5-vuC" secondAttribute="trailing" id="bJz-Gk-Oam"/>
                                                         <constraint firstItem="BUG-c5-vuC" firstAttribute="top" secondItem="sYS-tX-b5J" secondAttribute="top" id="kat-15-AZw"/>
-                                                        <constraint firstItem="bFJ-nM-JNV" firstAttribute="leading" secondItem="BUG-c5-vuC" secondAttribute="trailing" id="uGM-2o-xHM"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -113,7 +106,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your medicine list" id="Iz2-nN-dGJ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="K73-6a-eO8"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="I7n-Cn-Ojx">
                             <connections>
                                 <segue destination="lVw-kc-5jb" kind="showDetail" id="oH2-JY-7Hh"/>
@@ -133,10 +125,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="DeX-LN-RGn">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="DeX-LN-RGn">
                                 <rect key="frame" x="0.0" y="81" width="375" height="216"/>
+                                <locale key="locale" localeIdentifier="uz-Cyrl_UZ"/>
                                 <connections>
-                                    <action selector="datePicker:" destination="vut-wO-tWh" eventType="valueChanged" id="CbI-zJ-kvO"/>
+                                    <action selector="datePickerChanged:" destination="vut-wO-tWh" eventType="valueChanged" id="aXl-EF-rKB"/>
                                 </connections>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Gwj-dY-rxM">
@@ -154,6 +147,13 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W17-V9-Hgn">
+                                <rect key="frame" x="262" y="502" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lE2-ok-LVH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -179,7 +179,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePickerLb" destination="DeX-LN-RGn" id="C68-Wf-NTK"/>
+                        <outlet property="datePicker" destination="DeX-LN-RGn" id="63y-CF-Ipm"/>
+                        <outlet property="datePickerLb" destination="W17-V9-Hgn" id="g35-RI-7mv"/>
                         <outlet property="pillNameTF" destination="u0l-wk-0Js" id="85Q-dY-NjP"/>
                         <outlet property="pillNoteTF" destination="yjf-up-Bdm" id="yA0-sz-uqk"/>
                     </connections>
@@ -209,7 +210,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yRj-lN-YXF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lVw-kc-5jb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="lVw-kc-5jb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JyU-ed-NWa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

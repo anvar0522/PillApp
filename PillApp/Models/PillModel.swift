@@ -10,7 +10,6 @@ import RealmSwift
 class PillList: Object {
     @Persisted var name = ""
     @Persisted var note = ""
-    @Persisted var date = Date()
-    @Persisted var isCompleted = false   
+    @Persisted var time = ""
 }
 

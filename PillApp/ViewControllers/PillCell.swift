@@ -19,7 +19,7 @@ class PillCell: UITableViewCell {
         
         pillName.text = pill.name
         pillNote.text = pill.note
-        pillTime.text = "17:17"
+        pillTime.text = pill.time
         pillImg.image = UIImage(named: "pillIcon")
         pillImg.layer.cornerRadius = pillImg.frame.height / 2
       
