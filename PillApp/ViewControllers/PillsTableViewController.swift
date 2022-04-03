@@ -41,7 +41,9 @@ class PillsTableViewController: UITableViewController {
         
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+        let pill = pills[indexPath.row]
+        performSegue(withIdentifier: "showAddPill", sender: pill)
         }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -51,8 +53,15 @@ class PillsTableViewController: UITableViewController {
             StorageManager.shared.delete(pillList)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        
+
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        guard let setPills = segue.destination as? SetPillsTableViewController else { return }
+        let pillList = pills[indexPath.row]
+        setPills.pills = pillList
     }
     
     

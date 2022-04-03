@@ -6,11 +6,11 @@
 //
 
 import UIKit
+import UserNotifications
 import RealmSwift
 
 class SetPillsTableViewController: UIViewController {
-   
-  
+ 
     var pills: PillList!
 
     
@@ -18,8 +18,8 @@ class SetPillsTableViewController: UIViewController {
     
     @IBOutlet weak var pillNameTF: UITextField!
     @IBOutlet weak var pillNoteTF: UITextField!
-    
     @IBOutlet weak var datePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
             }
@@ -31,6 +31,9 @@ class SetPillsTableViewController: UIViewController {
          :  saveTask(withName: pillNameTF.text ?? "", andnote: pillNoteTF.text ?? "" , andtime: datePickerLb.text ?? "")
         
         dismiss(animated: true)
+        
+       allowNotifications()
+        notificationSent()
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -54,6 +57,33 @@ class SetPillsTableViewController: UIViewController {
         StorageManager.shared.save(pill)
         
     }
+    private func allowNotifications() {
+        let center1 = UNUserNotificationCenter.current()
+        center1.removeAllPendingNotificationRequests()
+        
+        center1.requestAuthorization(options: [.alert, .badge , .sound]) { granted, error in
+            if granted {
+                print ("Sent")
+            } else {
+                print("Error")
+            }
+        }
+    }
+    private func notificationSent() {
+        let center2 = UNUserNotificationCenter.current()
+        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Пожалуйста примите таблетки"
+        content.body = pillNameTF.text ?? ""
+        content.categoryIdentifier = "notifyAboutPill"
+        content.userInfo = ["customdata":"fizzbuzz"]
+        content.sound = UNNotificationSound.default
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center2.add(request)
+    }
         
     }
 extension SetPillsTableViewController: UITextFieldDelegate {
@@ -62,8 +92,7 @@ extension SetPillsTableViewController: UITextFieldDelegate {
         view.endEditing(true)
     }
 }
-    
-    extension SetPillsTableViewController {
+extension SetPillsTableViewController {
         private func showAlert(title: String, message: String) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default) { _ in
