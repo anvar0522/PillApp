@@ -15,7 +15,6 @@ class SetPillsTableViewController: UIViewController {
 
     
     @IBOutlet weak var datePickerLb: UILabel!
-    
     @IBOutlet weak var pillNameTF: UITextField!
     @IBOutlet weak var pillNoteTF: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
