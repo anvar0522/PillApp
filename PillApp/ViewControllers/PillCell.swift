@@ -11,7 +11,7 @@ class PillCell: UITableViewCell {
     
     @IBOutlet weak var pillNote: UILabel!
     @IBOutlet weak var pillName: UILabel!
-
+    
     @IBOutlet weak var pillImg: UIImageView!
     @IBOutlet weak var pillTime: UILabel!
     
@@ -22,8 +22,6 @@ class PillCell: UITableViewCell {
         pillTime.text = pill.time
         pillImg.image = UIImage(named: "pillIcon")
         pillImg.layer.cornerRadius = pillImg.frame.height / 2
-      
+        
     }
-    
-    
 }

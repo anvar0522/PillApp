@@ -20,6 +20,7 @@
 		E4DB6A9A27E7742600D88F5F /* PillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB6A9927E7742600D88F5F /* PillModel.swift */; };
 		E4DB6A9C27E774A100D88F5F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB6A9B27E774A100D88F5F /* DataManager.swift */; };
 		E4DB6AA127E787DE00D88F5F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB6AA027E787DE00D88F5F /* StorageManager.swift */; };
+		E4EF6A9627F9D6FA008B1269 /* ExtensionHextoRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EF6A9527F9D6FA008B1269 /* ExtensionHextoRGB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E4DB6A9927E7742600D88F5F /* PillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillModel.swift; sourceTree = "<group>"; };
 		E4DB6A9B27E774A100D88F5F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E4DB6AA027E787DE00D88F5F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		E4EF6A9527F9D6FA008B1269 /* ExtensionHextoRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHextoRGB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				E4A89FF927DA6F12005236B4 /* PillsTableViewController.swift */,
 				E493233627DE4FBE003CAB9D /* SetPillsTableViewController.swift */,
 				E49A26F927EA0EEA004B7BB9 /* PillCell.swift */,
+				E4EF6A9527F9D6FA008B1269 /* ExtensionHextoRGB.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				E4DB6A9C27E774A100D88F5F /* DataManager.swift in Sources */,
 				E49A26FA27EA0EEA004B7BB9 /* PillCell.swift in Sources */,
 				E4A89FE327DA5F35005236B4 /* AppDelegate.swift in Sources */,
+				E4EF6A9627F9D6FA008B1269 /* ExtensionHextoRGB.swift in Sources */,
 				E4A89FED27DA5F35005236B4 /* PillApp.xcdatamodeld in Sources */,
 				E4A89FE527DA5F35005236B4 /* SceneDelegate.swift in Sources */,
 				E4DB6AA127E787DE00D88F5F /* StorageManager.swift in Sources */,
