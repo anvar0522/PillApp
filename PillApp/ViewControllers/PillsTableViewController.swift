@@ -27,9 +27,12 @@ class PillsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navController = segue.destination as? UINavigationController else { return }
         guard let setPill = navController.topViewController as? SetPillsTableViewController else { return }
-        setPill.pills = sender as? PillList
+        setPill.pill = sender as? PillList
     }
     
+    @IBAction func addPill(_ sender: Any) {
+        performSegue(withIdentifier: "setPillVC", sender: nil)
+    }
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         pills.count
@@ -43,17 +46,17 @@ class PillsTableViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        let pill = pills[indexPath.row]
+        performSegue(withIdentifier: "setPillVC", sender: pill)
     }
     
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let pillList = pills[indexPath.row]
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+        if editingStyle == .delete {
             StorageManager.shared.delete(pillList)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     // MARK: - Private Methods
     private func viewSettings() {

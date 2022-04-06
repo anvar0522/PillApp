@@ -110,10 +110,13 @@
                         <barButtonItem key="rightBarButtonItem" title="Add+" style="done" id="I7n-Cn-Ojx">
                             <color key="tintColor" red="0.16078431372549018" green="0.2196078431372549" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="lVw-kc-5jb" kind="showDetail" identifier="showAddPill" id="oH2-JY-7Hh"/>
+                                <action selector="addPill:" destination="8ir-RB-wMp" id="EBb-mk-Vmm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="lVw-kc-5jb" kind="show" identifier="setPillVC" id="jeJ-r7-eCy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ajf-BJ-YdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -224,6 +227,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="lVw-kc-5jb" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="g4B-St-Pdm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JyU-ed-NWa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
