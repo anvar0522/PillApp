@@ -52,7 +52,6 @@ class PillsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let pillList = pills[indexPath.row]
-        
         if editingStyle == .delete {
             StorageManager.shared.delete(pillList)
             tableView.deleteRows(at: [indexPath], with: .fade)
