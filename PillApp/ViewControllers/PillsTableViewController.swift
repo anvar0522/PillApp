@@ -23,6 +23,13 @@ class PillsTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navController = segue.destination as? UINavigationController else { return }
+        guard let setPill = navController.topViewController as? SetPillsTableViewController else { return }
+        setPill.pills = sender as? PillList
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         pills.count
@@ -57,8 +64,9 @@ class PillsTableViewController: UITableViewController {
         
     }
     private func createTempData(){
-        DataManager.shared.createTempData {
+        DataManager.shared.createTempData() {
             self.tableView.reloadData()
         }
     }
 }
+

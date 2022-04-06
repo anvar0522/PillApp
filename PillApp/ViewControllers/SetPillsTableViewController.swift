@@ -11,7 +11,7 @@ import RealmSwift
 
 class SetPillsTableViewController: UIViewController {
     
-    var pills: PillList!
+    var pills: PillList?
     
     
     @IBOutlet weak var datePickerLb: UILabel!
@@ -23,14 +23,14 @@ class SetPillsTableViewController: UIViewController {
     @IBAction func savePill(_ sender: Any) {
         if pillNameTF.text == "" {
             showAlert(title: "Oooops", message: "Пожалуйста введите название лекарства")
-        }else if  datePickerLb.text == "00:00" {
+        }else if  datePickerLb.text == "label" {
             showAlert(title: "Oooops", message: "Пожалуйста введите корректное время")
         } else {
             saveTask(withName: pillNameTF.text ?? "", andnote: pillNoteTF.text ?? "" , andtime: datePickerLb.text ?? "")
+            dismiss(animated: true)
+            allowNotifications()
+            notificationSent()
         }
-        dismiss(animated: true)
-        allowNotifications()
-        notificationSent()
     }
     
     @IBAction func cancel(_ sender: Any) {
