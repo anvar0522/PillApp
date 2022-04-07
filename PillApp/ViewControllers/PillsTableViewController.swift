@@ -38,11 +38,12 @@ class PillsTableViewController: UITableViewController {
                                     setPillVC.datePickerLb.text ?? ""])
         if isEdit{
             StorageManager.shared.save(pill)
-        } else {
-            guard let index = tableView.indexPathForSelectedRow else { return }
-//            pills[index.row] = pill
-                
-            }
+        }
+//        else {
+//            guard let index = tableView.indexPathForSelectedRow else { return }
+////            pills[index.row] = pill
+//                
+//            }
         tableView.reloadData()
         }
     
