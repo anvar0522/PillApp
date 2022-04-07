@@ -186,7 +186,7 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="VmV-MO-RyN">
                             <color key="tintColor" red="0.16078431372549018" green="0.2196078431372549" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="savePill:" destination="vut-wO-tWh" id="q9M-1s-xeW"/>
+                                <segue destination="Mno-cT-b7S" kind="unwind" unwindAction="unwindFor:" id="iXF-dm-K6p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -198,6 +198,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubo-tC-EeZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Mno-cT-b7S" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3714" y="-53"/>
         </scene>
