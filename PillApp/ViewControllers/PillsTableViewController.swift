@@ -15,6 +15,7 @@ class PillsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pills = StorageManager.shared.realm.objects(PillList.self)
+        
         viewSettings()
         createTempData()
     }
@@ -42,7 +43,7 @@ class PillsTableViewController: UITableViewController {
 //        else {
 //            guard let index = tableView.indexPathForSelectedRow else { return }
 ////            pills[index.row] = pill
-//                
+//
 //            }
         tableView.reloadData()
         }
