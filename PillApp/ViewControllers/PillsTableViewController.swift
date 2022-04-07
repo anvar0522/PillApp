@@ -10,6 +10,7 @@ import RealmSwift
 
 class PillsTableViewController: UITableViewController {  
     var pills: Results<PillList>!
+    var isEdit = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,22 @@ class PillsTableViewController: UITableViewController {
         setPill.pill = sender as? PillList
     }
     
+    @IBAction func unwindSegue(for segue: UIStoryboardSegue) {
+        guard let setPill = segue.source as? SetPillsTableViewController else { return }
+        
+        let pill = PillList(value: [(setPill.pillNameTF.text ?? "",
+                                     setPill.pillNoteTF.text ?? "",
+                                     setPill.datePickerLb.text ?? "")])
+        if isEdit {
+            StorageManager.shared.save(pill)
+        } else {
+            guard let index = tableView.indexPathForSelectedRow else { return }
+        }
+        tableView.reloadData()
+    }
+    
     @IBAction func addPill(_ sender: Any) {
+        isEdit = true
         performSegue(withIdentifier: "setPillVC", sender: nil)
     }
     // MARK: - Table view data source
@@ -46,6 +62,7 @@ class PillsTableViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        isEdit = false
         let pill = pills[indexPath.row]
         performSegue(withIdentifier: "setPillVC", sender: pill)
     }

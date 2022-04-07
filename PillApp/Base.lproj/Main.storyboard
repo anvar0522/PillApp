@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z8d-s2-DYk">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -109,13 +110,10 @@
                     <navigationItem key="navigationItem" title="Your medicine list" id="Iz2-nN-dGJ">
                         <barButtonItem key="rightBarButtonItem" title="Add+" style="done" id="I7n-Cn-Ojx">
                             <color key="tintColor" red="0.16078431372549018" green="0.2196078431372549" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="addPill:" destination="8ir-RB-wMp" id="EBb-mk-Vmm"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="lVw-kc-5jb" kind="show" identifier="setPillVC" id="jeJ-r7-eCy"/>
+                        <segue destination="lVw-kc-5jb" kind="show" identifier="setPillVC" id="X6d-tu-8dX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ajf-BJ-YdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -186,7 +184,7 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="VmV-MO-RyN">
                             <color key="tintColor" red="0.16078431372549018" green="0.2196078431372549" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="savePill:" destination="vut-wO-tWh" id="q9M-1s-xeW"/>
+                                <segue destination="ySc-Af-AXR" kind="unwind" unwindAction="unwindSegueFor:" id="7FW-Yz-VCO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -198,6 +196,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubo-tC-EeZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ySc-Af-AXR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3714" y="-53"/>
         </scene>

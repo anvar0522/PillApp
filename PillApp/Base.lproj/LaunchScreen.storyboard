@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,38 +17,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="ngk-py-DbN">
-                                <rect key="frame" x="0.0" y="270.5" width="414" height="355"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WoO-yp-XNO">
+                                <rect key="frame" x="12" y="270.5" width="390" height="355"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="Eq1-jU-Cbh">
-                                        <rect key="frame" x="92" y="0.0" width="230" height="224"/>
+                                        <rect key="frame" x="75" y="0.0" width="240" height="242"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="230" id="X9D-gb-zjx"/>
-                                            <constraint firstAttribute="height" constant="224" id="iCw-mh-DEe"/>
+                                            <constraint firstAttribute="width" constant="240" id="F9Q-SM-3vC"/>
+                                            <constraint firstAttribute="height" constant="242" id="Gfn-um-udP"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your medical companion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWm-8w-NhZ">
-                                        <rect key="frame" x="35.5" y="250" width="343" height="36"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <color key="textColor" red="0.16078431372549018" green="0.2196078431372549" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take care about your health and take your pills on time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGA-hm-GDh">
-                                        <rect key="frame" x="19" y="312" width="376" height="43"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                        <color key="textColor" systemColor="systemGrayColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XNh-NK-3RJ">
+                                        <rect key="frame" x="7" y="257" width="376" height="98"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your medical companion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWm-8w-NhZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="376" height="35"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                                <color key="textColor" red="0.16078431372549018" green="0.2196078431372549" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take care about your health and take your pills on time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGA-hm-GDh">
+                                                <rect key="frame" x="0.0" y="55" width="376" height="43"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ngk-py-DbN" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9ue-Gu-AUu"/>
-                            <constraint firstItem="ngk-py-DbN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Vfr-gX-3yY"/>
-                            <constraint firstAttribute="trailing" secondItem="ngk-py-DbN" secondAttribute="trailing" id="il0-mJ-Z3L"/>
-                            <constraint firstItem="ngk-py-DbN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rzz-aV-cwb"/>
+                            <constraint firstItem="WoO-yp-XNO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="AaA-Bx-2h9"/>
+                            <constraint firstItem="WoO-yp-XNO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="c5v-Ls-jfQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WoO-yp-XNO" secondAttribute="trailing" constant="12" id="fXA-ce-8nJ"/>
+                            <constraint firstItem="WoO-yp-XNO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="12" id="k8a-6B-Kfc"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -20,18 +20,18 @@ class SetPillsTableViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     
-    @IBAction func savePill(_ sender: Any) {
-        if pillNameTF.text == "" {
-            showAlert(title: "Oooops", message: "Пожалуйста введите название лекарства")
-        }else if  datePickerLb.text == "label" {
-            showAlert(title: "Oooops", message: "Пожалуйста введите корректное время")
-        } else {
-            saveTask(withName: pillNameTF.text ?? "", andnote: pillNoteTF.text ?? "" , andtime: datePickerLb.text ?? "")
-            dismiss(animated: true)
-            allowNotifications()
-            notificationSent()
-        }
-    }
+//    @IBAction func savePill(_ sender: Any) {
+//        if pillNameTF.text == "" {
+//            showAlert(title: "Oooops", message: "Пожалуйста введите название лекарства")
+//        }else if  datePickerLb.text == "label" {
+//            showAlert(title: "Oooops", message: "Пожалуйста введите корректное время")
+//        } else {
+//            saveTask(withName: pillNameTF.text ?? "", andnote: pillNoteTF.text ?? "" , andtime: datePickerLb.text ?? "")
+//            dismiss(animated: true)
+//            allowNotifications()
+//            notificationSent()
+//        }
+//    }
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true)
