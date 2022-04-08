@@ -13,25 +13,42 @@ class SetPillsTableViewController: UIViewController {
     
     var pill: PillList!
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     @IBOutlet weak var datePickerLb: UILabel!
     @IBOutlet weak var pillNameTF: UITextField!
     @IBOutlet weak var pillNoteTF: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        saveButton.isEnabled = false
+        addTargetForTF()
+        datePicker.addTarget(self, action: #selector(datePickerChanged(_:)), for: .valueChanged)
+}
     
-//    @IBAction func savePill(_ sender: Any) {
-//        if pillNameTF.text == "" {
-//            showAlert(title: "Oooops", message: "Пожалуйста введите название лекарства")
-//        }else if  datePickerLb.text == "label" {
-//            showAlert(title: "Oooops", message: "Пожалуйста введите корректное время")
-//        } else {
-//            saveTask(withName: pillNameTF.text ?? "", andnote: pillNoteTF.text ?? "" , andtime: datePickerLb.text ?? "")
-//            dismiss(animated: true)
-//            allowNotifications()
-//            notificationSent()
-//        }
-//    }
+    @objc private func setActivityForSaveButton() {
+
+        let pillName = pillNameTF.text ?? ""
+//        let datePickerLB = datePickerLb.text ?? ""
+        
+        if pillName == "" {
+            saveButton.isEnabled = false
+        } else {
+        saveButton.isEnabled = true
+    }
+    }
+    
+    private func addTargetForTF() {
+        for textField in [datePicker, pillNameTF] {
+            textField?.addTarget(
+                self,
+                action: #selector(setActivityForSaveButton),
+                for: .editingChanged
+            )
+        }
+    }
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true)
@@ -49,11 +66,7 @@ class SetPillsTableViewController: UIViewController {
         datePickerLb.text = strDate
     }
     // MARK: - Private Methods
-    private func saveTask(withName name: String, andnote note: String, andtime time: String){
-        let pill = PillList(value: [name, note, time])
-        StorageManager.shared.save(pill)
-    }
-    private func allowNotifications() {
+     func allowNotifications() {
         let center1 = UNUserNotificationCenter.current()
         center1.removeAllPendingNotificationRequests()
         
@@ -65,7 +78,7 @@ class SetPillsTableViewController: UIViewController {
             }
         }
     }
-    private func notificationSent() {
+     func notificationSent() {
         let center2 = UNUserNotificationCenter.current()
         let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
@@ -89,10 +102,9 @@ extension SetPillsTableViewController: UITextFieldDelegate {
 }
 
 extension SetPillsTableViewController {
-    private func showAlert(title: String, message: String) {
+     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            
         }
         alert.addAction(okAction)
         present(alert, animated: true)

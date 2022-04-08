@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import RealmSwift
 
 class PillsTableViewController: UITableViewController {  
     private var pills: Results<PillList>!
@@ -15,7 +16,6 @@ class PillsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pills = StorageManager.shared.realm.objects(PillList.self)
-        
         viewSettings()
         createTempData()
     }
@@ -37,14 +37,16 @@ class PillsTableViewController: UITableViewController {
         let pill = PillList(value: [setPillVC.pillNameTF.text ?? "",
                                     setPillVC.pillNoteTF.text ?? "",
                                     setPillVC.datePickerLb.text ?? ""])
+        
         if isEdit{
             StorageManager.shared.save(pill)
+            setPillVC.allowNotifications()
+            setPillVC.notificationSent()
         }
-//        else {
-//            guard let index = tableView.indexPathForSelectedRow else { return }
-////            pills[index.row] = pill
-//
-//            }
+        else {
+            guard let index = tableView.indexPathForSelectedRow else { return }
+            StorageManager.shared.edit(pills[index.row], newValue: pill.name)
+}
         tableView.reloadData()
         }
     

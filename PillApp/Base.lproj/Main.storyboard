@@ -153,7 +153,7 @@
                                 </subviews>
                             </stackView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W17-V9-Hgn">
-                                <rect key="frame" x="338" y="502" width="5" height="30"/>
+                                <rect key="frame" x="277" y="502" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -195,12 +195,13 @@
                         <outlet property="datePickerLb" destination="W17-V9-Hgn" id="g35-RI-7mv"/>
                         <outlet property="pillNameTF" destination="u0l-wk-0Js" id="85Q-dY-NjP"/>
                         <outlet property="pillNoteTF" destination="yjf-up-Bdm" id="yA0-sz-uqk"/>
+                        <outlet property="saveButton" destination="VmV-MO-RyN" id="ERT-dc-qBD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubo-tC-EeZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Mno-cT-b7S" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3714" y="-53"/>
+            <point key="canvasLocation" x="3712.8000000000002" y="-53.523238380809602"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HcZ-cd-vRM">
