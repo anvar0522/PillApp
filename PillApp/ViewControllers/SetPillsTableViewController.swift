@@ -25,13 +25,18 @@ class SetPillsTableViewController: UIViewController {
         super.viewDidLoad()
         saveButton.isEnabled = false
         addTargetForTF()
-        datePicker.addTarget(self, action: #selector(datePickerChanged(_:)), for: .valueChanged)
+        datePicker.sendActions(for: .valueChanged)
+        
+        if let pill = pill {
+            pillNameTF.text = pill.name
+            pillNoteTF.text = pill.note
+            datePicker.date = pill.date
+        }
 }
     
     @objc private func setActivityForSaveButton() {
 
         let pillName = pillNameTF.text ?? ""
-//        let datePickerLB = datePickerLb.text ?? ""
         
         if pillName == "" {
             saveButton.isEnabled = false
@@ -94,19 +99,16 @@ class SetPillsTableViewController: UIViewController {
         center2.add(request)
     }
 }
+
 extension SetPillsTableViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
         view.endEditing(true)
     }
 }
-
 extension SetPillsTableViewController {
      func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-        }
-        alert.addAction(okAction)
         present(alert, animated: true)
     }
 }

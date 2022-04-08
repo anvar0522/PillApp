@@ -11,5 +11,6 @@ class PillList: Object {
     @Persisted var name = ""
     @Persisted var note = ""
     @Persisted var time = ""
+    @Persisted var date = Date()
 }
 

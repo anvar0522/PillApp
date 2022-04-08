@@ -31,9 +31,12 @@ func save(_ pillList: [PillList]) {
             realm.delete(pillList)
         }
     }
-    func edit (_ pillList: PillList, newValue: String) {
+    func edit (_ pillList: PillList, newName: String, newNote: String, newTime: String, newDate: Date ) {
         write {
-            pillList.name = newValue
+            pillList.name = newName
+            pillList.note = newNote
+            pillList.time = newTime
+            pillList.date = newDate
             
         }
     }

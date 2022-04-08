@@ -14,10 +14,10 @@ struct DataManager {
     private init() {}
     
     func createTempData(completion: @escaping () -> Void) {
-        if !UserDefaults.standard.bool(forKey: "takePill") {
+        if !UserDefaults.standard.bool(forKey: "takeYourPill") {
             
             
-            let kardiomagnil = PillList(value: ["Кардиомагнил 75","1 таблетка", "17:00"])
+            let kardiomagnil = PillList(value: ["Кардиомагнил 75","1 таблетка", "19:55"])
             let azimac = PillList(value: ["Азимак","1 таблетка", "19:00"])
             let yarina = PillList(value: ["Ярина","1 таблетка", "15:00"])
             
@@ -25,7 +25,7 @@ struct DataManager {
             
             DispatchQueue.main.async {
                 StorageManager.shared.save([kardiomagnil, azimac, yarina])
-                UserDefaults.standard.set(true, forKey: "takePill")
+                UserDefaults.standard.set(true, forKey: "takeYourPill")
                 completion()
             }
         }
