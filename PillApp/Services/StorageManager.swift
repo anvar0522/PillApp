@@ -37,7 +37,6 @@ func save(_ pillList: [PillList]) {
             pillList.note = newNote
             pillList.time = newTime
             pillList.date = newDate
-            
         }
     }
    

@@ -26,6 +26,7 @@ class SetPillsTableViewController: UIViewController {
         saveButton.isEnabled = false
         addTargetForTF()
         datePicker.sendActions(for: .valueChanged)
+        pillNameTF.becomeFirstResponder()
         
         if let pill = pill {
             pillNameTF.text = pill.name
@@ -90,7 +91,7 @@ class SetPillsTableViewController: UIViewController {
         
         let content = UNMutableNotificationContent()
         content.title = "Пожалуйста примите таблетки"
-        content.body = "\(pillNameTF.text ?? "") \(pillNoteTF.text ?? "")"
+        content.body = "\(pillNameTF.text ?? ""): \(pillNoteTF.text ?? "")"
         content.categoryIdentifier = "notifyAboutPill"
         content.userInfo = ["customdata":"fizzbuzz"]
         content.sound = UNNotificationSound.default
@@ -105,7 +106,17 @@ extension SetPillsTableViewController: UITextFieldDelegate {
         super .touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-}
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == pillNameTF {
+            pillNoteTF.becomeFirstResponder()
+        } else {
+            view.endEditing(true)
+        }
+        return true
+        }
+    }
+
 extension SetPillsTableViewController {
      func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
