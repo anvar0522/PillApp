@@ -39,11 +39,7 @@ class SetPillsTableViewController: UIViewController {
 
         let pillName = pillNameTF.text ?? ""
         
-        if pillName == "" {
-            saveButton.isEnabled = false
-        } else {
-        saveButton.isEnabled = true
-    }
+        saveButton.isEnabled = !pillName.isEmpty
     }
     
     private func addTargetForTF() {
@@ -73,10 +69,10 @@ class SetPillsTableViewController: UIViewController {
     }
     // MARK: - Private Methods
      func allowNotifications() {
-        let center1 = UNUserNotificationCenter.current()
-        center1.removeAllPendingNotificationRequests()
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
         
-        center1.requestAuthorization(options: [.alert, .badge , .sound]) { granted, error in
+        center.requestAuthorization(options: [.alert, .badge , .sound]) { granted, error in
             if granted {
                 print ("Sent")
             } else {
@@ -85,7 +81,7 @@ class SetPillsTableViewController: UIViewController {
         }
     }
      func notificationSent() {
-        let center2 = UNUserNotificationCenter.current()
+        let center = UNUserNotificationCenter.current()
         let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
@@ -97,7 +93,7 @@ class SetPillsTableViewController: UIViewController {
         content.sound = UNNotificationSound.default
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        center2.add(request)
+        center.add(request)
     }
 }
 

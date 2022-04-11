@@ -23,6 +23,7 @@ class PillsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
           tableView.reloadData()
+
     }
     
     
@@ -97,4 +98,11 @@ class PillsTableViewController: UITableViewController {
         }
     }
 }
+extension PillsTableViewController {
+     func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        present(alert, animated: true)
+    }
+}
+
 

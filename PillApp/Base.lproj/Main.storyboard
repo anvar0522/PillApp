@@ -132,7 +132,7 @@
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="DeX-LN-RGn">
                                 <rect key="frame" x="0.0" y="81" width="375" height="216"/>
-                                <locale key="locale" localeIdentifier="uz-Cyrl_UZ"/>
+                                <locale key="locale" localeIdentifier="uz"/>
                                 <connections>
                                     <action selector="datePickerChanged:" destination="vut-wO-tWh" eventType="valueChanged" id="aXl-EF-rKB"/>
                                 </connections>
