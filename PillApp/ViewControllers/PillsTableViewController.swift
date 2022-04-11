@@ -23,9 +23,7 @@ class PillsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
           tableView.reloadData()
-
-    }
-    
+}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navController = segue.destination as? UINavigationController else { return }
@@ -38,14 +36,14 @@ class PillsTableViewController: UITableViewController {
         let pill = PillList(value: [setPillVC.pillNameTF.text ?? "ии",
                                     setPillVC.pillNoteTF.text ?? "ии",
                                     setPillVC.datePickerLb.text ?? "",
-                                    setPillVC.datePicker.date,
-                                    UUID().uuidString])
+                                    setPillVC.datePicker.date
+                                   ])
         
         if isEdit{
             StorageManager.shared.save(pill)
             setPillVC.notificationSent()
             setPillVC.showAlert(title: "Поздравляем!", message: "Уведомления будут приходить каждый день")
-} else {
+        } else {
             guard let index = tableView.indexPathForSelectedRow else { return }
             StorageManager.shared.edit(pills[index.row], newName: pill.name, newNote: pill.note, newTime: pill.time, newDate: pill.date)
             setPillVC.notificationSent()

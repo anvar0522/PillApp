@@ -10,10 +10,10 @@ import UserNotifications
 import RealmSwift
 
 class SetPillsTableViewController: UIViewController {
-    let requestId = ["pill1","pill2", "pill3","pill4","pill5","pill6","pill7","pill8","pill9","pill10",
-                     "pill11","pill12","pill13","pill14","pill15","pill6","pill17","pill18","pill19","pill20",]
     
     var pill: PillList!
+    
+    var pillId = UUID().uuidString
     
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -80,14 +80,17 @@ class SetPillsTableViewController: UIViewController {
         content.title = "Пожалуйста примите таблетки"
         content.body = "\(pillNameTF.text ?? ""): \(pillNoteTF.text ?? "")"
         content.categoryIdentifier = "notifyAboutPill"
-        content.userInfo = ["customdata":"fizzbuzz"]
         content.sound = UNNotificationSound.default
         
          let request = UNNotificationRequest(identifier: pill.id,
                                             content: content,
                                             trigger: trigger)
-        center.removePendingNotificationRequests(withIdentifiers: [pill.id])
+
         center.add(request)
+    }
+    func deleteNotification() {
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: [pill.id])
     }
 }
 
