@@ -20,6 +20,7 @@
 		E4DB6A9A27E7742600D88F5F /* PillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB6A9927E7742600D88F5F /* PillModel.swift */; };
 		E4DB6A9C27E774A100D88F5F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB6A9B27E774A100D88F5F /* DataManager.swift */; };
 		E4DB6AA127E787DE00D88F5F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB6AA027E787DE00D88F5F /* StorageManager.swift */; };
+		E4DE389028045C7E00F18185 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE388F28045C7E00F18185 /* NotificationManager.swift */; };
 		E4EF6A9627F9D6FA008B1269 /* ExtensionHextoRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EF6A9527F9D6FA008B1269 /* ExtensionHextoRGB.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		E4DB6A9927E7742600D88F5F /* PillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillModel.swift; sourceTree = "<group>"; };
 		E4DB6A9B27E774A100D88F5F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E4DB6AA027E787DE00D88F5F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		E4DE388F28045C7E00F18185 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		E4EF6A9527F9D6FA008B1269 /* ExtensionHextoRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHextoRGB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E4DB6A9927E7742600D88F5F /* PillModel.swift */,
+				E4DE388F28045C7E00F18185 /* NotificationManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				E493233727DE4FBE003CAB9D /* SetPillsTableViewController.swift in Sources */,
 				E4DB6A9A27E7742600D88F5F /* PillModel.swift in Sources */,
 				E4DB6A9C27E774A100D88F5F /* DataManager.swift in Sources */,
+				E4DE389028045C7E00F18185 /* NotificationManager.swift in Sources */,
 				E49A26FA27EA0EEA004B7BB9 /* PillCell.swift in Sources */,
 				E4A89FE327DA5F35005236B4 /* AppDelegate.swift in Sources */,
 				E4EF6A9627F9D6FA008B1269 /* ExtensionHextoRGB.swift in Sources */,

@@ -38,17 +38,16 @@ class PillsTableViewController: UITableViewController {
         let pill = PillList(value: [setPillVC.pillNameTF.text ?? "ии",
                                     setPillVC.pillNoteTF.text ?? "ии",
                                     setPillVC.datePickerLb.text ?? "",
-                                    setPillVC.datePicker.date])
+                                    setPillVC.datePicker.date,
+                                    UUID().uuidString])
         
         if isEdit{
             StorageManager.shared.save(pill)
-            setPillVC.allowNotifications()
             setPillVC.notificationSent()
             setPillVC.showAlert(title: "Поздравляем!", message: "Уведомления будут приходить каждый день")
 } else {
             guard let index = tableView.indexPathForSelectedRow else { return }
             StorageManager.shared.edit(pills[index.row], newName: pill.name, newNote: pill.note, newTime: pill.time, newDate: pill.date)
-            setPillVC.allowNotifications()
             setPillVC.notificationSent()
 }
         tableView.reloadData()

@@ -14,7 +14,7 @@ struct DataManager {
     private init() {}
     
     func createTempData(completion: @escaping () -> Void) {
-        if !UserDefaults.standard.bool(forKey: "takeYourPill") {
+        if !UserDefaults.standard.bool(forKey: "pillNeedToBeTaken") {
             
             
             let kardiomagnil = PillList(value: ["Кардиомагнил 75","1 таблетка", "19:55"])
@@ -25,7 +25,7 @@ struct DataManager {
             
             DispatchQueue.main.async {
                 StorageManager.shared.save([kardiomagnil, azimac, yarina])
-                UserDefaults.standard.set(true, forKey: "takeYourPill")
+                UserDefaults.standard.set(true, forKey: "pillNeedToBeTaken")
                 completion()
             }
         }

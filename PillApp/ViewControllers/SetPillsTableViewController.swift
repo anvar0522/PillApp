@@ -10,8 +10,11 @@ import UserNotifications
 import RealmSwift
 
 class SetPillsTableViewController: UIViewController {
+    let requestId = ["pill1","pill2", "pill3","pill4","pill5","pill6","pill7","pill8","pill9","pill10",
+                     "pill11","pill12","pill13","pill14","pill15","pill6","pill17","pill18","pill19","pill20",]
     
     var pill: PillList!
+    
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -67,19 +70,7 @@ class SetPillsTableViewController: UIViewController {
         let strDate = dateFormatter.string(from: datePicker.date)
         datePickerLb.text = strDate
     }
-    // MARK: - Private Methods
-     func allowNotifications() {
-        let center = UNUserNotificationCenter.current()
-        center.removeAllPendingNotificationRequests()
-        
-        center.requestAuthorization(options: [.alert, .badge , .sound]) { granted, error in
-            if granted {
-                print ("Sent")
-            } else {
-                print("Error")
-            }
-        }
-    }
+    // MARK: - Methods
      func notificationSent() {
         let center = UNUserNotificationCenter.current()
         let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
@@ -92,7 +83,10 @@ class SetPillsTableViewController: UIViewController {
         content.userInfo = ["customdata":"fizzbuzz"]
         content.sound = UNNotificationSound.default
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+         let request = UNNotificationRequest(identifier: pill.id,
+                                            content: content,
+                                            trigger: trigger)
+        center.removePendingNotificationRequests(withIdentifiers: [pill.id])
         center.add(request)
     }
 }

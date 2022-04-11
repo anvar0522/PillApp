@@ -12,5 +12,6 @@ class PillList: Object {
     @Persisted var note = ""
     @Persisted var time = ""
     @Persisted var date = Date()
+    @Persisted var id = UUID().uuidString
 }
 
