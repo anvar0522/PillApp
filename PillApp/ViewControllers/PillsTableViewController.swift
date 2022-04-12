@@ -7,7 +7,6 @@
 
 import UIKit
 import RealmSwift
-import UserNotifications
 
 class PillsTableViewController: UITableViewController {  
     private var pills: Results<PillList>!
@@ -95,6 +94,7 @@ class PillsTableViewController: UITableViewController {
         }
     }
 }
+
 extension PillsTableViewController {
      func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

@@ -12,9 +12,7 @@ import RealmSwift
 class SetPillsTableViewController: UIViewController {
     
     var pill: PillList!
-    
-    var pillId = UUID().uuidString
-    
+    var id = UUID().uuidString
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -82,7 +80,7 @@ class SetPillsTableViewController: UIViewController {
         content.categoryIdentifier = "notifyAboutPill"
         content.sound = UNNotificationSound.default
         
-         let request = UNNotificationRequest(identifier: pill.id,
+         let request = UNNotificationRequest(identifier: id,
                                             content: content,
                                             trigger: trigger)
 
@@ -90,7 +88,8 @@ class SetPillsTableViewController: UIViewController {
     }
     func deleteNotification() {
         let center = UNUserNotificationCenter.current()
-        center.removePendingNotificationRequests(withIdentifiers: [pill.id])
+        center.removePendingNotificationRequests(withIdentifiers: [id
+                                                                  ])
     }
 }
 
